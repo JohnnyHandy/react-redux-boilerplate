@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
-import { signIn } from '../store/auth/actions'
+import { SIGN_IN as signIn } from '../store/auth/actions'
 
 import LoginComponent from '../components/form/LoginForm'
 

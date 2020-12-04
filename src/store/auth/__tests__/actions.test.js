@@ -12,7 +12,7 @@ describe('auth actions', () => {
       }
 
       expect(
-        actions.signIn({
+        actions.SIGN_IN({
           email: 'mock',
           password: 'mock'
         })
@@ -27,7 +27,7 @@ describe('auth actions', () => {
         payload: 'mockUser'
       }
 
-      expect(actions.signInSuccessful('mockUser')).toEqual(expected)
+      expect(actions.SIGN_IN_SUCCESSFUL('mockUser')).toEqual(expected)
     })
   })
 
@@ -38,7 +38,7 @@ describe('auth actions', () => {
         payload: 'mockError'
       }
 
-      expect(actions.signInFailure('mockError')).toEqual(expected)
+      expect(actions.SIGN_IN_FAILURE('mockError')).toEqual(expected)
     })
   })
 
@@ -48,7 +48,7 @@ describe('auth actions', () => {
         type: 'auth:LOGOUT'
       }
 
-      expect(actions.logout()).toEqual(expected)
+      expect(actions.LOGOUT()).toEqual(expected)
     })
   })
 })

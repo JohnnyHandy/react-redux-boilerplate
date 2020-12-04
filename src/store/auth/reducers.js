@@ -1,10 +1,5 @@
-import createReducer from '../createReducer'
-import {
-  SIGN_IN,
-  SIGN_IN_SUCCESSFUL,
-  SIGN_IN_FAILURE,
-  LOGOUT
-} from './constants'
+import { createReducer } from '@reduxjs/toolkit'
+import { SIGN_IN, SIGN_IN_SUCCESSFUL, SIGN_IN_FAILURE, LOGOUT } from './actions'
 
 const initialState = {
   user: {},

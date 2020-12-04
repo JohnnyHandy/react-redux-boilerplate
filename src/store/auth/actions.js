@@ -1,25 +1,7 @@
-import {
-  SIGN_IN,
-  SIGN_IN_SUCCESSFUL,
-  SIGN_IN_FAILURE,
-  LOGOUT
-} from './constants'
+import { createAction } from '@reduxjs/toolkit'
 
-export const signIn = credentials => ({
-  type: SIGN_IN,
-  payload: credentials
-})
+export const SIGN_IN = createAction('auth:SIGN_IN')
+export const SIGN_IN_SUCCESSFUL = createAction('auth:SIGN_IN_SUCCESSFUL')
+export const SIGN_IN_FAILURE = createAction('auth:SIGN_IN_FAILURE')
 
-export const signInSuccessful = user => ({
-  type: SIGN_IN_SUCCESSFUL,
-  payload: user
-})
-
-export const signInFailure = error => ({
-  type: SIGN_IN_FAILURE,
-  payload: error
-})
-
-export const logout = () => ({
-  type: LOGOUT
-})
+export const LOGOUT = createAction('auth:LOGOUT')

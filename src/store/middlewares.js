@@ -1,8 +1,7 @@
 import { once } from 'lodash'
 
 import axiosInstance from '../utils/http'
-import { SIGN_IN_SUCCESSFUL } from '../store/auth/constants'
-import { logout } from '../store/auth/actions'
+import { LOGOUT as logout, SIGN_IN_SUCCESSFUL } from '../store/auth/actions'
 
 const clearUserOnAuthErrors = once(next => {
   axiosInstance.interceptors.response.use(

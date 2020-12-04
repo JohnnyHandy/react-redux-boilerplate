@@ -37,7 +37,7 @@ describe('app sagas', () => {
 
       const argOfFirstCall = getArgFromCall(dispatchMock)
       expect(argOfFirstCall).toEqual(
-        actions.signInSuccessful(successResultMock)
+        actions.SIGN_IN_SUCCESSFUL(successResultMock)
       )
     })
 
@@ -58,7 +58,7 @@ describe('app sagas', () => {
       ).done
 
       const argOfFirstCall = getArgFromCall(dispatchMock)
-      expect(argOfFirstCall).toEqual(actions.signInFailure(successResultMock))
+      expect(argOfFirstCall).toEqual(actions.SIGN_IN_FAILURE(successResultMock))
     })
   })
 })

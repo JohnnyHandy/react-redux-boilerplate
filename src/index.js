@@ -6,7 +6,7 @@ import { PersistGate } from 'redux-persist/es/integration/react'
 import App from './app'
 import configureStore from './store/configureStore'
 
-import './index.style'
+import { GlobalStyle } from './index.style'
 
 const { persistor, store } = configureStore()
 
@@ -22,6 +22,7 @@ const renderApp = NextApp => {
         onBeforeLift={onBeforeLift}
         persistor={persistor}
       >
+        <GlobalStyle />
         <NextApp />
       </PersistGate>
     </Provider>,
