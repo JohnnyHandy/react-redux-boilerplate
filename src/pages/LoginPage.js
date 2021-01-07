@@ -7,7 +7,7 @@ import { SIGN_IN as signIn } from '../store/auth/actions'
 
 import LoginComponent from '../components/form/LoginForm'
 
-const LoginPage = ({ signIn }) => <LoginComponent onSubmit={signIn} />
+export const LoginPage = ({ signIn }) => <LoginComponent onSubmit={signIn} />
 
 LoginPage.propTypes = {
   signIn: PropTypes.func.isRequired

@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { DashboardTemplate } from '../DashboardTemplate'
+import DashboardTemplate from '../DashboardTemplate'
 
 const wrapper = shallow(
   <DashboardTemplate>

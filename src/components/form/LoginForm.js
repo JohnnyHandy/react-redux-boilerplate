@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import { Form } from './styles/LoginForm.style'
 
-const LoginForm = ({ handleSubmit, onSubmit }) => (
+export const LoginForm = ({ handleSubmit, onSubmit }) => (
   <Form onSubmit={handleSubmit(onSubmit)}>
     <div>
       <div>
