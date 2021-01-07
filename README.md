@@ -33,31 +33,49 @@ These instructions will get you a copy of the project up and running on your loc
 
 What things you need to install the software and how to install them
 
-```
-Give examples
-```
 
-### Installing
+* NodeJS v8.9.4
+    - Install through [NVM - Node Version Manager](https://github.com/nvm-sh/nvm)
+      - After instaling nvm, run ```nvm install 8.9.4```, followed by ```nvm use 8.9.4```
+    - Install through [Node.js official website](https://nodejs.org/en/download/releases/)
+* Docker
+    - Install through [Docker Installation Guide](https://docs.docker.com/engine/installation/)
+* Docker Compose
+    - Install through [Docker Compose Installation Guide](https://docs.docker.com/compose/install/)
+
+### Configuring files
+
+* Set the .env file
+  * ``` NPM_TOKEN ``` : Get one with the devops or a team member
+  * ```GITHUB_TOKEN ```Get one through your [Github Account Settings](https://github.com/settings/tokens) with *repo* permissions
+  * ```COMPOSE_FILE```
+    * For Development:  ```docker-compose.sso.yml:docker-compose.dg.yml```
+    * For QA Testing (using Docker to mount application): ```docker-compose.yml:docker-compose.sso.yml:docker-compose.dg.yml```
+  * ```DG_BRANCH```: Set the desired Datagateway-API branch which you want to work with (staging as default)
+  * ```REACT_APP_SERVER_ENV```: Datagateway-API environment
+  * ```REACT_APP_SERVER_PORT```: Datagateway-API port
+  * ```REACT_APP_SSO_PORT```: Fractal SSO port; should be the port which is runnning *fractal-login-ui* project
+  * ```REACT_APP_PORT```: Port which is running the React App
+* Get a valid *.npmrc* file with a devops or a team member
+
+
+### Installing and Running
 
 A step by step series of examples that tell you have to get a development env running
 
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
+* For development purposes, run the following command to install all the dependencies and to run the application, respectively:
+  1. ```npm run install```
+  2. ``` npm run start ``` (check the available command scripts at the *package.json* file)
+* For QA testing purposes, execute the following command, which is used both to install and to run the application 
+  * ```docker-compose up front``` (the name of the service may change, consult the file *docker_compose.yml* for details)
 
 End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
 Explain how to run the automated tests for this system
+* To execute the tests, run the following command
+  * ```npm run test```
 
 ### Break down into end to end tests
 
