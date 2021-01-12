@@ -13,11 +13,11 @@ Goals:
 - [ ] Css Lint
 - [ ] Error tracker with docs about
 - [x] Bundle Analyzer
-- [ ] Doc about best practices
-- [ ] Doc about the component patterns
-- [ ] Doc about the route system
+- [x] Doc about best practices
+- [x] Doc about the component patterns
+- [x] Doc about the route system
 - [ ] Doc about the webpack config
-- [ ] Doc about environment variables
+- [x] Doc about environment variables
 - [ ] Doc about contributions
 - [ ] Doc about the white box tests
 

@@ -111,7 +111,7 @@
     }
 
 ```
-### Spreading props and attributes
+### Spreading/Forwarding props and attributes
 
 * It is possible to forward props and attributes received at the component, giving flexibility to its rendering elements
 ```jsx
@@ -125,3 +125,66 @@
         )
     }
 ```
+
+###  Merging destructured props with other values
+
+* The order in which attributes and destructuring props are inserted into the element matters to define if one will override another. Check these examples:
+  * The attributes that come before the forwarded props will be substituted by attributes within the forwarded props that have the same name as them. At the next example, even the div receives an className attribute, it will be substituted by the className attribute that was passed to it  through the forwarded props. In other words, ```contactClass``` will substitute ```myDiv```
+    ```html
+        <Contact className='contactClass' />
+    ```
+    ```jsx
+    function Contact(props) {
+        // myDiv will be substituted by contactClass
+        return (
+            <div
+            className='mydiv'
+            {...props}
+            >
+                Hello
+            </div>
+            )
+    } 
+    ```
+  * To have fixed attributes regardless of forwarded props with same name, all the desired fixed attributes should come after the forwarded props, like at the example below, where even after receiving a new ```className='contactClass'``` attribbute from props with a different value, it is overrided by the ```className='myDiv'``` prop that comes after it
+      ```html
+        <Contact className='contactClass' />
+    ```
+    ```jsx
+    function Contact(props) {
+        // myDiv will won't be substituted by contactClass
+        return (
+            <div
+            {...props}
+            className='mydiv'
+            >
+                Hello
+            </div>
+            )
+    } 
+    ```
+
+### Conditional rendering with ternary operators and short-circuit evaluation
+
+* In order to avoid using if/else statement for rendering, techniques like the use of ternary operators and short-circuit evaluation are good options:
+  ```javascript
+    if(condition) {
+        return <Component />
+    }
+    //Can be substituted by:
+   {
+      condition && <Component />
+   }
+  ```
+  ```javascript
+    if(condition) {
+      return <Component />
+    } else {
+      return <Contact />
+    }
+
+    // Can be substituted by:
+    {
+        condition ? <Component /> : <Contact />
+    }
+  ```
