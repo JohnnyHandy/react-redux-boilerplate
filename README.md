@@ -45,18 +45,12 @@ What things you need to install the software and how to install them
 
 ### Configuring files
 
-* Set the .env file
-  * ``` NPM_TOKEN ``` : Get one with the devops or a team member
-  * ```GITHUB_TOKEN ```Get one through your [Github Account Settings](https://github.com/settings/tokens) with *repo* permissions
-  * ```COMPOSE_FILE```
-    * For Development:  ```docker-compose.sso.yml:docker-compose.dg.yml```
-    * For QA Testing (using Docker to mount application): ```docker-compose.yml:docker-compose.sso.yml:docker-compose.dg.yml```
-  * ```DG_BRANCH```: Set the desired Datagateway-API branch which you want to work with (staging as default)
-  * ```REACT_APP_SERVER_ENV```: Datagateway-API environment
-  * ```REACT_APP_SERVER_PORT```: Datagateway-API port
-  * ```REACT_APP_SSO_PORT```: Fractal SSO port; should be the port which is runnning *fractal-login-ui* project
-  * ```REACT_APP_PORT```: Port which is running the React App
-* Get a valid *.npmrc* file with a devops or a team member
+* [Follow the instructions to set the .env file](https://github.com/JohnnyHandy/react-redux-boilerplate/blob/update-boilerplate/Env.md)
+ 
+* Get a valid *.npmrc* file with a devops or a team member or if you have a valid ```NPM_TOKEN```, create one with the following content:
+  ```
+  //registry.npmjs.org/:_authToken=<NPM_TOKEN>
+  ```
 
 
 ### Installing and Running
@@ -93,9 +87,18 @@ Explain what these tests test and why
 Give an example
 ```
 
+## Coding patterns and practices
+
+* [Component patterns documentations](https://github.com/JohnnyHandy/react-redux-boilerplate/blob/update-boilerplate/Components.md)
+* [React practices and patterns](https://github.com/JohnnyHandy/react-redux-boilerplate/blob/update-boilerplate/Practices.md)
+
+## Routing system
+* [Routing system explanation](https://github.com/JohnnyHandy/react-redux-boilerplate/blob/update-boilerplate/Routes.md)
+
 ## Deployment
 
 Add additional notes about how to deploy this on a live system
+
 
 ## Built With
 

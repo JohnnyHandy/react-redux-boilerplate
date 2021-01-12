@@ -15,7 +15,7 @@ import reverse from 'lodash/reverse'
 
 import { privateRoutes, publicRoutes, notLoggedRoutes } from './pathUrls'
 import RouteWithTemplate from './RouteWithTemplate'
-import LoginPage from '../pages/LoginPage'
+import LoginPageComponent from '../pages/LoginPage'
 import NotFoundPage from '../pages/NotFoundPage'
 
 const mapStateToProps = state => {
@@ -42,7 +42,7 @@ const Routes = ({ isLogged }) => {
     return setRoute({
       ...route,
       template: isLogged ? route.template : undefined,
-      component: isLogged ? route.component : LoginPage
+      component: isLogged ? route.component : LoginPageComponent
     })
   }
 
